@@ -1,0 +1,29 @@
+# Server Configuration
+server:
+  port: 8081
+  servlet:
+    context-path: /
+  shutdown: graceful
+
+# Spring Application Configuration
+spring:
+  application:
+    name: logback-logging-app
+
+# Management & Actuator (Optional)
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: when-authorized
+
+# Logging Configuration
+logging:
+  level:
+    root: INFO
+    com.lla: DEBUG
+    org.springframework.web: DEBUG
+    org.hibernate: WARN
